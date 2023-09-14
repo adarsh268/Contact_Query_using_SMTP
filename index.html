@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form To Email Using JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h3>GET IN TOUCH</h3>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="text" id="phone" placeholder="Your Phone No." required>
+            <input type="text" id="sub" placeholder="Subject" required>
+            <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function sendEmail(){
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var sub = document.getElementById("sub").value;
+            var message = document.getElementById("message").value;
+            var body = "Name: " + name + "<br/> Email: " +email + "<br/> Contact Number: " + phone + "<br/> Message :"+ message;
+            Email.send({
+                SecureToken: '86d6d030-a2a9-4421-9f55-6bba3532e7e4',
+                To : 'adarsh8603857133@gmail.com',
+                From : "adarsh8603857133@gmail.com",
+                Subject : sub,
+                Body : body
+            }).then(
+            message =>{
+                if(message == 'OK'){
+                    swal("Successfull", "Your Data Successfully Received", "success");
+                }else{
+                    swal("Something went wrong", "Your Data not Received", "error");
+                }
+
+            }
+);
+        }
+    </script>
+</body>
+</html>
