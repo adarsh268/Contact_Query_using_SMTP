@@ -10,6 +10,6 @@ Successful Message Alert
 
 <img width="566" alt="image" src="https://github.com/adarsh268/Contact_Query_using_SMTP/assets/109815491/95aa4fe8-36f2-4b6e-ab3a-94561ff07fb2">
 
-Email Notification
+Email Notification Received to the owner
 
 <img width="787" alt="image" src="https://github.com/adarsh268/Contact_Query_using_SMTP/assets/109815491/f60e10ae-a7fa-4773-86b9-dfed5f86039e">
